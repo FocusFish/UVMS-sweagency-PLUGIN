@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>fish.focus.uvms.maven</groupId>
+        <artifactId>uvms-pom</artifactId>
+        <relativePath />
+        <version>3.2</version>
+    </parent>
+
+    <groupId>eu.europa.ec.fisheries.uvms.plugins.sweagency</groupId>
+    <artifactId>sweagency-plugin</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <description>SwAM position report publisher</description>
+    
+    <properties>
+        <exchange.model.version>5.2.7-UVMS</exchange.model.version>
+        <uvms.pom.version>3.2</uvms.pom.version>
+        
+        <application.name>${project.artifactId}</application.name> 
+        <application.responseTopicName>PLUGIN_RESPONSE</application.responseTopicName> 
+        <application.groupid>${project.groupId}</application.groupid> 
+        <application.version>${project.version}</application.version>
+        <application.logfile>/app/logs/${project.artifactId}/${project.artifactId}.log</application.logfile>
+        <application.error.logfile>/app/logs/${project.artifactId}/${project.artifactId}-error.log</application.error.logfile>
+    </properties>
+    
+    <dependencyManagement>
+    	<dependencies>
+            <dependency>
+                <groupId>fish.focus.uvms.maven</groupId>
+                <artifactId>uvms-pom-arquillian-deps</artifactId>
+                <version>${uvms.pom.version}</version>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.microprofile.metrics</groupId>
+            <artifactId>microprofile-metrics-api</artifactId>
+            <version>2.3.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>eu.europa.ec.fisheries.uvms.exchange</groupId>
+            <artifactId>exchange-model</artifactId>
+            <version>${exchange.model.version}</version>
+        </dependency>
+    </dependencies>
+    
+    <scm>
+        <connection>scm:git:https://github.com/UnionVMS/sweagency-plugin.git</connection>
+        <tag>1.0-SNAPSHOT</tag>
+    </scm>
+
+    <build>
+        <finalName>${project.name}-${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/webapp</directory>
+                            <filtering>true</filtering>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>write-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <outputFile>${basedir}/src/main/resources/plugin.properties</outputFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
