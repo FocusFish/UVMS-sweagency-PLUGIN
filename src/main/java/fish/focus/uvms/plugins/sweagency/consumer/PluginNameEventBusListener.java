@@ -1,4 +1,4 @@
-package eu.europa.ec.fisheries.uvms.plugins.sweagency.consumer;
+package fish.focus.uvms.plugins.sweagency.consumer;
 
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.EJB;
@@ -9,25 +9,25 @@ import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import eu.europa.ec.fisheries.schema.exchange.common.v1.AcknowledgeType;
-import eu.europa.ec.fisheries.schema.exchange.common.v1.AcknowledgeTypeType;
-import eu.europa.ec.fisheries.schema.exchange.plugin.v1.PingRequest;
-import eu.europa.ec.fisheries.schema.exchange.plugin.v1.PluginBaseRequest;
-import eu.europa.ec.fisheries.schema.exchange.plugin.v1.SetCommandRequest;
-import eu.europa.ec.fisheries.schema.exchange.plugin.v1.SetConfigRequest;
-import eu.europa.ec.fisheries.schema.exchange.plugin.v1.SetReportRequest;
-import eu.europa.ec.fisheries.schema.exchange.plugin.v1.StartRequest;
-import eu.europa.ec.fisheries.schema.exchange.plugin.v1.StopRequest;
-import eu.europa.ec.fisheries.uvms.exchange.model.mapper.ExchangePluginResponseMapper;
-import eu.europa.ec.fisheries.uvms.exchange.model.mapper.JAXBMarshaller;
-import eu.europa.ec.fisheries.uvms.plugins.sweagency.StartupBean;
-import eu.europa.ec.fisheries.uvms.plugins.sweagency.producer.PluginMessageProducer;
-import eu.europa.ec.fisheries.uvms.plugins.sweagency.service.PluginService;
+import fish.focus.schema.exchange.common.v1.AcknowledgeType;
+import fish.focus.schema.exchange.common.v1.AcknowledgeTypeType;
+import fish.focus.schema.exchange.plugin.v1.PingRequest;
+import fish.focus.schema.exchange.plugin.v1.PluginBaseRequest;
+import fish.focus.schema.exchange.plugin.v1.SetCommandRequest;
+import fish.focus.schema.exchange.plugin.v1.SetConfigRequest;
+import fish.focus.schema.exchange.plugin.v1.SetReportRequest;
+import fish.focus.schema.exchange.plugin.v1.StartRequest;
+import fish.focus.schema.exchange.plugin.v1.StopRequest;
+import fish.focus.uvms.exchange.model.mapper.ExchangePluginResponseMapper;
+import fish.focus.uvms.exchange.model.mapper.JAXBMarshaller;
+import fish.focus.uvms.plugins.sweagency.StartupBean;
+import fish.focus.uvms.plugins.sweagency.producer.PluginMessageProducer;
+import fish.focus.uvms.plugins.sweagency.service.PluginService;
 
 @MessageDriven(activationConfig = {
-        @ActivationConfigProperty(propertyName = "subscriptionName", propertyValue = "eu.europa.ec.fisheries.uvms.plugins.sweagency"),
-        @ActivationConfigProperty(propertyName = "clientId", propertyValue = "eu.europa.ec.fisheries.uvms.plugins.sweagency"),
-        @ActivationConfigProperty(propertyName = "messageSelector", propertyValue = "ServiceName='eu.europa.ec.fisheries.uvms.plugins.sweagency'"),
+        @ActivationConfigProperty(propertyName = "subscriptionName", propertyValue = "fish.focus.uvms.plugins.sweagency"),
+        @ActivationConfigProperty(propertyName = "clientId", propertyValue = "fish.focus.uvms.plugins.sweagency"),
+        @ActivationConfigProperty(propertyName = "messageSelector", propertyValue = "ServiceName='fish.focus.uvms.plugins.sweagency'"),
         @ActivationConfigProperty(propertyName = "subscriptionDurability", propertyValue = "Durable"),
         @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "jms/topic/EventBus"),
         @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Topic")

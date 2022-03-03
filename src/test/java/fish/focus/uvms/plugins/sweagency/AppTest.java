@@ -1,4 +1,4 @@
-package eu.europa.ec.fisheries.uvms.plugins.sweagency;
+package fish.focus.uvms.plugins.sweagency;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

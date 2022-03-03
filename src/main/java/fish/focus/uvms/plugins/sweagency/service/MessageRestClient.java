@@ -9,7 +9,7 @@ the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the impl
 FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. You should have received a
 copy of the GNU General Public License along with the IFDM Suite. If not, see <http://www.gnu.org/licenses/>.
  */
-package eu.europa.ec.fisheries.uvms.plugins.sweagency.service;
+package fish.focus.uvms.plugins.sweagency.service;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -21,8 +21,8 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import eu.europa.ec.fisheries.schema.exchange.movement.v1.RecipientInfoType;
-import eu.europa.ec.fisheries.uvms.plugins.sweagency.dto.Movement;
+import fish.focus.schema.exchange.movement.v1.RecipientInfoType;
+import fish.focus.uvms.plugins.sweagency.dto.Movement;
 
 @Stateless
 public class MessageRestClient {

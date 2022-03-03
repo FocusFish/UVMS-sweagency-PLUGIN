@@ -1,4 +1,4 @@
-package eu.europa.ec.fisheries.uvms.plugins.sweagency.producer;
+package fish.focus.uvms.plugins.sweagency.producer;
 
 import javax.annotation.Resource;
 import javax.ejb.LocalBean;
@@ -14,7 +14,7 @@ import javax.jms.TextMessage;
 import javax.jms.Topic;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import eu.europa.ec.fisheries.uvms.exchange.model.constant.ExchangeModelConstants;
+import fish.focus.uvms.exchange.model.constant.ExchangeModelConstants;
 
 @Stateless
 @LocalBean

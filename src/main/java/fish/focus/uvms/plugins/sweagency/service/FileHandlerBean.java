@@ -1,4 +1,4 @@
-package eu.europa.ec.fisheries.uvms.plugins.sweagency.service;
+package fish.focus.uvms.plugins.sweagency.service;
 
 import java.io.IOException;
 import java.io.InputStream;

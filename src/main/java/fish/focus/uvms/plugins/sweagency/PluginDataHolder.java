@@ -1,6 +1,6 @@
-package eu.europa.ec.fisheries.uvms.plugins.sweagency;
+package fish.focus.uvms.plugins.sweagency;
 
-import eu.europa.ec.fisheries.schema.exchange.movement.v1.SetReportMovementType;
+import fish.focus.schema.exchange.movement.v1.SetReportMovementType;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 

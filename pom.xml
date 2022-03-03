@@ -6,18 +6,18 @@
         <groupId>fish.focus.uvms.maven</groupId>
         <artifactId>uvms-pom</artifactId>
         <relativePath />
-        <version>3.5</version>
+        <version>3.16</version>
     </parent>
 
-    <groupId>eu.europa.ec.fisheries.uvms.plugins.sweagency</groupId>
+    <groupId>fish.focus.uvms.plugins.sweagency</groupId>
     <artifactId>sweagency-plugin</artifactId>
     <version>0.4-SNAPSHOT</version>
     <packaging>war</packaging>
     <description>SwAM position report publisher</description>
     
     <properties>
-        <exchange.model.version>5.3.3-UVMS</exchange.model.version>
-        <uvms.pom.version>3.5</uvms.pom.version>
+        <exchange.model.version>5.3.25</exchange.model.version>
+        <uvms.pom.version>3.16</uvms.pom.version>
         
         <application.name>${project.artifactId}</application.name> 
         <application.responseTopicName>PLUGIN_RESPONSE</application.responseTopicName> 
@@ -37,14 +37,14 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>eu.europa.ec.fisheries.uvms.exchange</groupId>
+            <groupId>fish.focus.uvms.exchange</groupId>
             <artifactId>exchange-model</artifactId>
             <version>${exchange.model.version}</version>
         </dependency>
     </dependencies>
     
     <scm>
-        <connection>scm:git:https://github.com/UnionVMS/sweagency-plugin.git</connection>
+        <connection>scm:git:https://github.com/FocusFish/UVMS-sweagency-PLUGIN.git</connection>
         <tag>1.0-SNAPSHOT</tag>
     </scm>
 

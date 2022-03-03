@@ -1,4 +1,4 @@
-package eu.europa.ec.fisheries.uvms.plugins.sweagency.consumer;
+package fish.focus.uvms.plugins.sweagency.consumer;
 
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.EJB;
@@ -9,17 +9,17 @@ import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import eu.europa.ec.fisheries.schema.exchange.registry.v1.ExchangeRegistryBaseRequest;
-import eu.europa.ec.fisheries.schema.exchange.registry.v1.RegisterServiceResponse;
-import eu.europa.ec.fisheries.schema.exchange.registry.v1.UnregisterServiceResponse;
-import eu.europa.ec.fisheries.uvms.exchange.model.mapper.JAXBMarshaller;
-import eu.europa.ec.fisheries.uvms.plugins.sweagency.StartupBean;
-import eu.europa.ec.fisheries.uvms.plugins.sweagency.service.PluginService;
+import fish.focus.schema.exchange.registry.v1.ExchangeRegistryBaseRequest;
+import fish.focus.schema.exchange.registry.v1.RegisterServiceResponse;
+import fish.focus.schema.exchange.registry.v1.UnregisterServiceResponse;
+import fish.focus.uvms.exchange.model.mapper.JAXBMarshaller;
+import fish.focus.uvms.plugins.sweagency.StartupBean;
+import fish.focus.uvms.plugins.sweagency.service.PluginService;
 
 @MessageDriven(activationConfig =  {
-        @ActivationConfigProperty(propertyName = "subscriptionName",          propertyValue = "eu.europa.ec.fisheries.uvms.plugins.sweagencyPLUGIN_RESPONSE"),
-        @ActivationConfigProperty(propertyName = "clientId",                  propertyValue = "eu.europa.ec.fisheries.uvms.plugins.sweagencyPLUGIN_RESPONSE"),
-        @ActivationConfigProperty(propertyName = "messageSelector",           propertyValue = "ServiceName='eu.europa.ec.fisheries.uvms.plugins.sweagencyPLUGIN_RESPONSE'"),
+        @ActivationConfigProperty(propertyName = "subscriptionName",          propertyValue = "fish.focus.uvms.plugins.sweagencyPLUGIN_RESPONSE"),
+        @ActivationConfigProperty(propertyName = "clientId",                  propertyValue = "fish.focus.uvms.plugins.sweagencyPLUGIN_RESPONSE"),
+        @ActivationConfigProperty(propertyName = "messageSelector",           propertyValue = "ServiceName='fish.focus.uvms.plugins.sweagencyPLUGIN_RESPONSE'"),
         @ActivationConfigProperty(propertyName = "subscriptionDurability",    propertyValue = "Durable"),
         @ActivationConfigProperty(propertyName = "destinationLookup",         propertyValue = "jms/topic/EventBus"),
         @ActivationConfigProperty(propertyName = "destinationType",           propertyValue = "javax.jms.Topic")

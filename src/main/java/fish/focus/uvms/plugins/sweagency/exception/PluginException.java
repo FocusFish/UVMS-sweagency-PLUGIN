@@ -1,4 +1,4 @@
-package eu.europa.ec.fisheries.uvms.plugins.sweagency.exception;
+package fish.focus.uvms.plugins.sweagency.exception;
 
 public class PluginException extends Exception {
     private static final long serialVersionUID = 1L;

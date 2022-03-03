@@ -1,4 +1,4 @@
-package eu.europa.ec.fisheries.uvms.plugins.sweagency.service;
+package fish.focus.uvms.plugins.sweagency.service;
 
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
@@ -8,17 +8,17 @@ import org.eclipse.microprofile.metrics.Counter;
 import org.eclipse.microprofile.metrics.annotation.Metric;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import eu.europa.ec.fisheries.schema.exchange.common.v1.AcknowledgeTypeType;
-import eu.europa.ec.fisheries.schema.exchange.common.v1.CommandType;
-import eu.europa.ec.fisheries.schema.exchange.common.v1.KeyValueType;
-import eu.europa.ec.fisheries.schema.exchange.common.v1.ReportType;
-import eu.europa.ec.fisheries.schema.exchange.common.v1.ReportTypeType;
-import eu.europa.ec.fisheries.schema.exchange.movement.v1.MovementPoint;
-import eu.europa.ec.fisheries.schema.exchange.movement.v1.MovementType;
-import eu.europa.ec.fisheries.schema.exchange.service.v1.SettingListType;
-import eu.europa.ec.fisheries.uvms.plugins.sweagency.StartupBean;
-import eu.europa.ec.fisheries.uvms.plugins.sweagency.dto.Movement;
-import eu.europa.ec.fisheries.uvms.plugins.sweagency.mapper.MovementMapper;
+import fish.focus.schema.exchange.common.v1.AcknowledgeTypeType;
+import fish.focus.schema.exchange.common.v1.CommandType;
+import fish.focus.schema.exchange.common.v1.KeyValueType;
+import fish.focus.schema.exchange.common.v1.ReportType;
+import fish.focus.schema.exchange.common.v1.ReportTypeType;
+import fish.focus.schema.exchange.movement.v1.MovementPoint;
+import fish.focus.schema.exchange.movement.v1.MovementType;
+import fish.focus.schema.exchange.service.v1.SettingListType;
+import fish.focus.uvms.plugins.sweagency.StartupBean;
+import fish.focus.uvms.plugins.sweagency.dto.Movement;
+import fish.focus.uvms.plugins.sweagency.mapper.MovementMapper;
 
 @LocalBean
 @Stateless

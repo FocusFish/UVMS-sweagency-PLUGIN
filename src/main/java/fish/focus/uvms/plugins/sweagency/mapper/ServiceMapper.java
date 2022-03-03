@@ -1,17 +1,17 @@
-package eu.europa.ec.fisheries.uvms.plugins.sweagency.mapper;
+package fish.focus.uvms.plugins.sweagency.mapper;
 
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import eu.europa.ec.fisheries.schema.exchange.plugin.types.v1.PluginType;
-import eu.europa.ec.fisheries.schema.exchange.service.v1.CapabilityListType;
-import eu.europa.ec.fisheries.schema.exchange.service.v1.CapabilityType;
-import eu.europa.ec.fisheries.schema.exchange.service.v1.CapabilityTypeType;
-import eu.europa.ec.fisheries.schema.exchange.service.v1.ServiceType;
-import eu.europa.ec.fisheries.schema.exchange.service.v1.SettingListType;
-import eu.europa.ec.fisheries.schema.exchange.service.v1.SettingType;
+import fish.focus.schema.exchange.plugin.types.v1.PluginType;
+import fish.focus.schema.exchange.service.v1.CapabilityListType;
+import fish.focus.schema.exchange.service.v1.CapabilityType;
+import fish.focus.schema.exchange.service.v1.CapabilityTypeType;
+import fish.focus.schema.exchange.service.v1.ServiceType;
+import fish.focus.schema.exchange.service.v1.SettingListType;
+import fish.focus.schema.exchange.service.v1.SettingType;
 
 public class ServiceMapper {
 
