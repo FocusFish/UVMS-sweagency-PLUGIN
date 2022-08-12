@@ -41,6 +41,11 @@
             <artifactId>exchange-model</artifactId>
             <version>${exchange.model.version}</version>
         </dependency>
+        <dependency>
+            <groupId>se.havochvatten.service.library.messaging</groupId>
+            <artifactId>vessel-positions-asyncapi-model</artifactId>
+            <version>0.0.1</version>
+        </dependency>
     </dependencies>
     
     <scm>

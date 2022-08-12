@@ -17,8 +17,7 @@ import fish.focus.schema.exchange.movement.v1.MovementPoint;
 import fish.focus.schema.exchange.movement.v1.MovementType;
 import fish.focus.schema.exchange.service.v1.SettingListType;
 import fish.focus.uvms.plugins.sweagency.StartupBean;
-import fish.focus.uvms.plugins.sweagency.dto.Movement;
-import fish.focus.uvms.plugins.sweagency.mapper.MovementMapper;
+import fish.focus.uvms.plugins.sweagency.producer.RemoteProducer;
 
 @LocalBean
 @Stateless
@@ -28,7 +27,7 @@ public class PluginService {
     StartupBean startupBean;
     
     @Inject
-    private MessageRestClient restClient;
+    private RemoteProducer remoteProducer;
     
     @Inject
     @Metric(name = "hav_outgoing", absolute = true)
@@ -43,10 +42,9 @@ public class PluginService {
         if (movementType != null && ReportTypeType.MOVEMENT.equals(report.getType())) {
             MovementPoint pos = movementType.getPosition();
             if (pos != null) {
-                Movement movement = MovementMapper.mapToMovement(movementType);
-                int status = restClient.postMessage(movement, report.getRecipientInfo());
-                LOG.debug("status: " + status);
-                if (status != 200) {
+                boolean sentToMq = remoteProducer.sendMessage(movementType);
+                LOG.debug("sentToMq: {}", sentToMq);
+                if (!sentToMq) {
                     return AcknowledgeTypeType.NOK;
                 }
                 havOutgoing.inc();
