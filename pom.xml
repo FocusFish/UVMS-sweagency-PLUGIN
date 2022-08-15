@@ -6,17 +6,17 @@
         <groupId>fish.focus.uvms.maven</groupId>
         <artifactId>uvms-pom</artifactId>
         <relativePath />
-        <version>3.16</version>
+        <version>3.18</version>
     </parent>
 
     <groupId>fish.focus.uvms.plugins.sweagency</groupId>
     <artifactId>sweagency-plugin</artifactId>
-    <version>0.4</version>
+    <version>0.5</version>
     <packaging>war</packaging>
     <description>SwAM position report publisher</description>
     
     <properties>
-        <exchange.model.version>5.3.25</exchange.model.version>
+        <exchange.model.version>5.3.27</exchange.model.version>
         <uvms.pom.version>3.16</uvms.pom.version>
         
         <application.name>${project.artifactId}</application.name> 
@@ -40,6 +40,11 @@
             <groupId>fish.focus.uvms.exchange</groupId>
             <artifactId>exchange-model</artifactId>
             <version>${exchange.model.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>se.havochvatten.service.library.messaging</groupId>
+            <artifactId>vessel-positions-asyncapi-model</artifactId>
+            <version>0.0.1</version>
         </dependency>
     </dependencies>
     
@@ -70,7 +75,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>properties-maven-plugin</artifactId>
-                <version>1.0.0</version>
+                <version>1.1.0</version>
                 <executions>
                     <execution>
                         <phase>generate-resources</phase>
